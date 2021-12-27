@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import Link from "next/link";
+import { MEDIA_QUERY_ENDPOINT } from "../../constants";
 
 export const TopNav = () =>{
     return(
@@ -54,6 +55,9 @@ const Header = styled.header`
   justify-content: space-between;
   padding: 20px 40px;
   border-bottom: 3px solid #eee;
+  @media (max-width: ${MEDIA_QUERY_ENDPOINT.MOBILE}) {
+    flex-direction: column;
+}
 `
 
 
@@ -65,6 +69,10 @@ const List = styled.ul`
 const Item = styled.li`
   padding-right:15px;
   font-size: 30px;
+  @media (max-width: ${MEDIA_QUERY_ENDPOINT.TABLE}){
+    font-size: 20px;
+  }
+
 `
 
 const LogoImg = styled.img`
