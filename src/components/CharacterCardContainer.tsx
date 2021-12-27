@@ -3,6 +3,7 @@ import useSWR from 'swr';
 import { Character } from '../types/characters';
 import styled from '@emotion/styled'
 import { CharacterCard } from '.';
+import { MEDIA_QUERY_ENDPOINT } from '../constants';
 
 const fetcher = (url: string) => axios(url).then((res)=> res.data);
 
@@ -24,8 +25,8 @@ export const CharacterCardContainer = () => {
           
             return (
             <CharacterCard 
-            characterData = {character} 
-            key={`futurama-character-${character.id}`}
+              characterData = {character} 
+              key={`futurama-character-${character.id}`}
             />
             )
             })}
@@ -35,5 +36,16 @@ export const CharacterCardContainer = () => {
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  padding: 100px;
+  gap: 60px;
+  @media (max-width: ${MEDIA_QUERY_ENDPOINT.TABLE}){
+    grid-template-columns: repeat(3,1fr);
+  }
+
+  @media (max-width: ${MEDIA_QUERY_ENDPOINT.MOBILE}) {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+
 `

@@ -11,23 +11,25 @@ export const CharacterCard = ({ characterData }: CharacterCardProps)  =>{
 
 
     return (
-        <Card key={`futurama-characters-${id}`}>
-          <Link href={`/characters/${id}`}>
-            <a>
-            <Profile src={images.main} alt="" />
-            <h1>{name.first} {name.middle} {name.last}</h1>
-            </a>
+        // <Card key={`futurama-characters-${id}`}>
+          <Link key={`futurama-characters-${id}`} href={`/characters/${id}` }>
+            <CardLink>
+              <Profile src={images.main} alt="" />
+              <h1>{name.first} {name.middle} {name.last}</h1>
+            </CardLink>
           </Link>
-        </Card>
+        // </Card>
     )
 } 
-
-
-const Card = styled.div`
-  max-width: 360px;
-`
 
 const Profile = styled.img`
   width: 100%;
   /* aspect-ratio: 9/16; */
+`
+
+const CardLink = styled.a`
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
 `
