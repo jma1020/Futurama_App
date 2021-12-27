@@ -23,7 +23,7 @@ export const CharacterCard = ({ characterData }: CharacterCardProps)  =>{
 } 
 
 const Profile = styled.img`
-  width: 100%;
+  max-height:400px;
   /* aspect-ratio: 9/16; */
 `
 
@@ -32,4 +32,10 @@ const CardLink = styled.a`
   display: flex;
   flex-direction: column;
   justify-content: space-between; 
+  box-sizing: border-box;
+  &:hover {
+    border: 10px solid white;
+    border-radius: 20px;
+  
+  }
 `
