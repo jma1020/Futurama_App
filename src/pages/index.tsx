@@ -22,6 +22,7 @@ const Box = styled.section`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  padding-top: 70px;
 `
 
 const MainImg = styled.img`

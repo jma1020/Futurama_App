@@ -4,6 +4,8 @@ import useSWR from "swr";
 import { NextPage } from "next";
 import { API_ENDPOINT } from "../../constants";
 import { InfoData } from "../../types/infoData";
+import Link from "next/link";
+
 
 const InfoPage:NextPage = () =>{
 
@@ -16,19 +18,39 @@ const InfoPage:NextPage = () =>{
     
     const {id   , synopsis, yearsAired, creators} = data[0]
     return(
-        <div>
-            <h3>{yearsAired}</h3>
+        <InfoContainer>
+            <h1>INFORMATION</h1>
+            <h3>Futurama   {yearsAired}</h3>
             <p>{synopsis}</p>
+            <h3>만드신 분</h3>
             {creators.map((e:InfoData,index:number)=>{
                 return(
                     <div key={`creators-${index}`}>
-                        <p>{e.name}</p>
-                        <p>{e.url}</p>
+                        <Link href={e.url}>
+                            <a>
+                                <LinkBtn>{e.name}</LinkBtn>
+                            </a>
+                        </Link>
+                        
                     </div>
                 )
             })}
-        </div>
+        </InfoContainer>
     )
 }
 
 export default InfoPage
+
+const InfoContainer =styled.main`
+    padding: 50px;
+`
+
+const LinkBtn = styled.h2`
+    background-color: #f7ba70;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 10px;
+    &:hover{
+        background-color: #eb9730;
+    }
+`
