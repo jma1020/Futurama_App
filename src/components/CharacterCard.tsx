@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { Character } from '../types/characters';
+import Link from 'next/link'
 
 interface CharacterCardProps {
     characterData: Character
@@ -11,8 +12,12 @@ export const CharacterCard = ({ characterData }: CharacterCardProps)  =>{
 
     return (
         <Card key={`futurama-characters-${id}`}>
+          <Link href={`/characters/${id}`}>
+            <a>
             <Profile src={images.main} alt="" />
             <h1>{name.first} {name.middle} {name.last}</h1>
+            </a>
+          </Link>
         </Card>
     )
 } 
