@@ -3,7 +3,7 @@ import { fetcher } from "../../utils/fetcher";
 import useSWR from "swr";
 import { NextPage } from "next";
 import { API_ENDPOINT } from "../../constants";
-
+import { InfoData } from "../../types/infoData";
 
 const InfoPage:NextPage = () =>{
 
@@ -13,10 +13,20 @@ const InfoPage:NextPage = () =>{
     if (!data) return <div>Loadings</div>
     
     console.log(data)
+    
+    const {id   , synopsis, yearsAired, creators} = data[0]
     return(
         <div>
-            <h3>{data[0].yearsAired}</h3>
-            <p>{data[0].synopsis}</p>
+            <h3>{yearsAired}</h3>
+            <p>{synopsis}</p>
+            {creators.map((e:InfoData,index:number)=>{
+                return(
+                    <div key={`creators-${index}`}>
+                        <p>{e.name}</p>
+                        <p>{e.url}</p>
+                    </div>
+                )
+            })}
         </div>
     )
 }
