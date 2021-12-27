@@ -18,12 +18,12 @@ const QuestionPage:NextPage = () =>{
             {data.map((item:QuestionData)=>{
                 const {id,question,correctAnswer,possibleAnswers}=item
                 return(
-                    <div>
+                    <div key={`question-${id}`}>
                         <h1>{question}</h1>
 
-                        {possibleAnswers.map((item:string)=>{
+                        {possibleAnswers.map((item:string,index:number)=>{
                             return(
-                                <p>{item}</p>
+                                <p key={`possible-${index}`}>{item}</p>
                             )
                         })}
                         <p>{`정답은${correctAnswer}`}</p>

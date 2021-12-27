@@ -20,7 +20,7 @@ const EpsiodePage:NextPage = () =>{
             {data.map((item:EpisodeData)=>{
                 const {desc, id, number, originalAirDate, title, writers} = item
                 return(
-                    <div>
+                    <div key={`episode-${id}`}>
                         <h1>{number}  {title}</h1>
                         <p>{desc}</p>
                         <p>{originalAirDate}</p>

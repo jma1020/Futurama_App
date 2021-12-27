@@ -21,7 +21,7 @@ const Cast:NextPage = () =>{
             {data.map((item:CastData)=>{
                 const {id, name, born, bio}=item;
                 return(
-                    <div>
+                    <div key={`casts-${id}`}>
                         <h1>{name}</h1>
                         <p>{born}</p>
                         <p>{bio.url}</p>

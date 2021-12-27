@@ -18,7 +18,7 @@ const Home: NextPage = () => {
         <nav>
           <List>
             <Item>
-              <Link href={`/characters/`}>
+              <Link href={`/info/`}>
                 <a>Info</a>
               </Link>
             </Item>
@@ -28,22 +28,22 @@ const Home: NextPage = () => {
               </Link>
             </Item>
             <Item>
-              <Link href={`/characters/`}>
+              <Link href={`/casts/`}>
                 <a>Cast</a>
               </Link>
             </Item>
             <Item>
-              <Link href={`/characters/`}>
+              <Link href={`/episodes/`}>
                 <a>Episodes</a>
               </Link>
             </Item>
             <Item>
-              <Link href={`/characters/`}>
+              <Link href={`/questions/`}>
                 <a>Questions</a>
               </Link>
             </Item>
             <Item>
-              <Link href={`/characters/`}>
+              <Link href={`/inventorys/`}>
                 <a>Iventory</a>
               </Link>
             </Item>
