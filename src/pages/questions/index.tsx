@@ -10,7 +10,7 @@ const QuestionPage:NextPage = () =>{
     
     const { data, error } = useSWR(`${API_ENDPOINT}/questions/`,fetcher)
     
-    if (error) return <div>"An error has occurred.";</div>
+    if (error) return <div>An error has occurred.;</div>
     if (!data) return <div>Loadings</div>
     
     console.log(data)

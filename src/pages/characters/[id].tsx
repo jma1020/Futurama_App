@@ -9,7 +9,7 @@ const CharacterDetail: NextPage = () =>{
 
     const { data, error } = useCharacterData(id);
 
-    if (error) return <div>"An error has occurred.";</div>
+    if (error) return <div>An error has occurred.;</div>
     if (!data) return <div>Loadings</div>
     console.log(data)
     const { images, name, sayings, age, homePlanet, species} =data
@@ -20,7 +20,7 @@ const CharacterDetail: NextPage = () =>{
 
     return(
         <CardDetail>
-            <img src={images.main} alt="" />
+            <img src={images.main} />
             <h2>{name.first} {name.last} ({age})</h2>
             <p>planet : {homePlanet}, species : {species}</p>
             <h3>{sayings[randomNumber]}</h3>

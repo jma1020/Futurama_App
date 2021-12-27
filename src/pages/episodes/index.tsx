@@ -9,7 +9,7 @@ const EpsiodePage:NextPage = () =>{
     
     const { data, error } = useSWR(`${API_ENDPOINT}/episodes/`,fetcher)
     
-    if (error) return <div>"An error has occurred.";</div>
+    if (error) return <div>An error has occurred.;</div>
     if (!data) return <div>Loadings</div>
     
     console.log(data)
